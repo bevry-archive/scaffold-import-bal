@@ -1,0 +1,186 @@
+/*
+CSS3 Transition Mixin
+@author Benjamin "balupton" Lupton {@link http://www.balupton.com}
+@version 1.0, April 25 2010
+*/
+
+@mixin transition($trans) {
+	-webkit-transition: $trans;
+	-moz-transition: $trans;
+	-o-transition: $trans;
+	transition: $trans;
+}
+
+/**
+ * Specify the size of the background image in pixels or percentage.
+ * Firefox 3.6+ can also have values of cover or contain
+ * @see https://developer.mozilla.org/en/CSS/-moz-background-size
+ */
+@mixin background-size($x, $y)
+{
+	-o-background-size:$x $y;
+	-webkit-background-size:$x $y;
+	-khtml-background-size:$x $y;
+	-moz-background-size:$x $y;
+}
+
+/**
+ * Border-box
+ *
+ * CSS3 box-sizing:border-box for the browsers that support it.
+ * Supported by Firefox 2+, Safari 3+, IE6/7 (with behaviour), IE8
+ */
+@mixin border-box 
+{
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+}
+/**
+ * Easier way to use border-radius
+ */
+@mixin border-radius($radius)
+{
+	-webkit-border-radius:$radius;
+	-moz-border-radius:$radius;
+	border-radius:$radius;
+}
+
+@mixin border-top-left-radius($radius)
+{
+	-webkit-border-top-left-radius:$radius;
+	-moz-border-radius-topleft:$radius;
+}
+
+@mixin border-top-right-radius($radius)
+{
+	-webkit-border-top-right-radius:$radius;
+	-moz-border-radius-topright:$radius;
+}
+
+@mixin border-bottom-left-radius($radius)
+{
+	-webkit-border-bottom-left-radius:$radius;
+	-moz-border-radius-bottomleft:$radius;
+}
+
+@mixin border-bottom-right-radius($radius)
+{
+	-webkit-border-bottom-right-radius:$radius;
+	-moz-border-radius-bottomright:$radius;
+}
+
+@mixin border-top-radius($radius)
+{
+	+border-top-left-radius($radius);
+	+border-top-right-radius($radius);
+}
+
+@mixin border-bottom-radius($radius)
+{
+	+border-bottom-left-radius($radius);
+	+border-bottom-right-radius($radius);
+}
+
+@mixin border-left-radius($radius)
+{
+	+border-top-left-radius($radius);
+	+border-bottom-left-radius($radius);
+}
+
+@mixin border-right-radius($radius)
+{
+	+border-top-right-radius($radius);
+	+border-bottom-right-radius($radius);
+}
+
+/**
+ * Adds a drop shadow
+ */
+@mixin box-shadow($x, $y, $blur, $color)
+{
+	-moz-box-shadow:$x $y $blur $color;
+	-webkit-box-shadow:$x $y $blur $color;
+	box-shadow:$x $y $blur $color;
+}
+
+/**
+* Inline-block
+*
+* Workaround to make the element behave as inline-block
+*
+* @type Mixin
+*/
+@mixin inline-block
+{
+	zoom:1;
+	display:inline; 
+	display:-moz-inline-box; 
+	display:inline-block; 
+	vertical-align:top;
+}
+
+/**
+ * CSS3 Multi column layout
+ * @see http://www.css3.info/preview/multi-column-layout/
+ */
+@mixin column-width($width)
+{
+	-moz-column-width:$width;
+	-webkit-column-width:$width;
+}
+
+@mixin column-count($count)
+{
+	-moz-column-count:$count;
+	-webkit-column-count:$count;
+}
+
+@mixin column-rule($color, $style, $thickness)
+{
+	-moz-column-rule:$color $style $thickness;
+	-webkit-column-rule:$color $style $thickness;
+}
+
+@mixin column-gap($gap)
+{
+	-moz-column-gap:$gap;
+	-webkit-column-gap:$gap;
+}
+
+/**
+* Opacity
+* 
+* Thanks to Chris Eppstein. Borrowed this one from Compass. 
+* Takes a number from 0 to 1.
+*/
+@mixin opacity($opacity = 1)
+{
+	opacity:$opacity;
+	-moz-opacity:$opacity;
+	-khtml-opacity:$opacity;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=calc($opacity*100))";
+	filter:alpha(opacity=calc($opacity*100));
+}
+
+/**
+ * Rotate an element 90, 180 or 270 degrees
+ */
+@mixin rotate($angle)
+{
+	-webkit-transform: rotate(#[$angle]deg);
+	-moz-transform: rotate(#[$angle]deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#[90 / $angle]);
+}
+
+/**
+ * Adds an ellipsis or clips the text 
+ * Options are "ellipsis" or "clip"
+ * @see http://www.css3.info/preview/text-overflow/
+ */
+@mixin text-overflow($type = "ellipsis")
+{
+	text-overflow:$type;
+	-o-text-overflow:$type;
+}

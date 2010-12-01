@@ -3,34 +3,25 @@ CSS3 Button Mixins
 @author Benjamin "balupton" Lupton {@link http://www.balupton.com}
 @author http://www.webdesignerwall.com/demo/css-buttons.html
 @version 1.0, April 25 2010
-
-Usage:
-	.button {
-		+cssbutton;
-	}
-	#signup_button {
-		+cssbutton_default;
-		+cssbutton_green;
-	}
 */
 
-=cssbutton_small {
+@mixin cssbutton_small {
 	font-size: 11px;
 	padding: .2em 1em .275em;
 }
 
-=cssbutton_medium {
+@mixin cssbutton_medium {
 	font-size: 12px;
 	padding: .4em 1.5em .42em;
 }
 
-=cssbutton_rounded {
+@mixin cssbutton_rounded {
 	-webkit-border-radius: 2em;
 	-moz-border-radius: 2em;
 	border-radius: 2em;
 }
 
-=cssbutton_black {
+@mixin cssbutton_black {
 	color: #d7d7d7;
 	border: solid 1px #333;
 	background: #333;
@@ -51,7 +42,7 @@ Usage:
 		filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#666666');
 	}
 }
-=cssbutton_gray {
+@mixin cssbutton_gray {
 	color: #e9e9e9;
 	border: solid 1px #555;
 	background: #6e6e6e;
@@ -72,7 +63,7 @@ Usage:
 		filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#575757', endColorstr='#888888');
 	}
 }
-=cssbutton_white {
+@mixin cssbutton_white {
 	color: #606060;
 	border: solid 1px #b7b7b7;
 	background: #fff;
@@ -93,7 +84,7 @@ Usage:
 		filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#ffffff');
 	}
 }
-=cssbutton_orange {
+@mixin cssbutton_orange {
 	color: #fef4e9;
 	border: solid 1px #da7c0c;
 	background: #f78d1d;
@@ -114,7 +105,7 @@ Usage:
 		filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
 	}
 }
-=cssbutton_red {
+@mixin cssbutton_red {
 	color: #faddde;
 	border: solid 1px #980c10;
 	background: #d81b21;
@@ -135,7 +126,7 @@ Usage:
 		filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#aa1317', endColorstr='#ed1c24');
 	}
 }
-=cssbutton_blue {
+@mixin cssbutton_blue {
 	color: #d9eef7;
 	border: solid 1px #0076a3;
 	background: #0095cd;
@@ -156,7 +147,7 @@ Usage:
 		filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee');
 	}
 }
-=cssbutton_rosy {
+@mixin cssbutton_rosy {
 	color: #fae7e9;
 	border: solid 1px #b73948;
 	background: #da5867;
@@ -177,7 +168,7 @@ Usage:
 		filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#bf404f', endColorstr='#f16c7c');
 	}
 }
-=cssbutton_green {
+@mixin cssbutton_green {
 	color: #e8f0de;
 	border: solid 1px #538312;
 	background: #64991e;
@@ -198,7 +189,7 @@ Usage:
 		filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#4e7d0e', endColorstr='#7db72f');
 	}
 }
-=cssbutton_pink {
+@mixin cssbutton_pink {
 	color: #feeef5;
 	border: solid 1px #d2729e;
 	background: #f895c2;
@@ -220,7 +211,7 @@ Usage:
 	}
 }
 
-=cssbutton_default {
+@mixin cssbutton_default {
 	display: inline-block;
 	zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
 	*display: inline;
@@ -250,47 +241,47 @@ Usage:
 	}
 }
 
-=cssbutton {
+@mixin cssbutton {
 	/* Default */
-	+cssbutton_default;
+	@include cssbutton_default;
 	
-	/* Shapes + Sizes */
+	/* Shapes @include  Sizes */
 	&.rounded {
-		+cssbutton_rounded;
+		@include cssbutton_rounded;
 	}
 	&.medium {
-		+cssbutton_medium;
+		@include cssbutton_medium;
 	}
 	&.small {
-		+cssbutton_small;
+		@include cssbutton_small;
 	}
 	
 	/* Colors */
 	&.black {
-		+cssbutton_black;
+		@include cssbutton_black;
 	}
 	&.gray {
-		+cssbutton_gray;
+		@include cssbutton_gray;
 	}
 	&.white {
-		+cssbutton_white;
+		@include cssbutton_white;
 	}
 	&.orange {
-		+cssbutton_orange;
+		@include cssbutton_orange;
 	}
 	&.red {
-		+cssbutton_red;
+		@include cssbutton_red;
 	}
 	&.blue {
-		+cssbutton_blue;
+		@include cssbutton_blue;
 	}
 	&.rosy {
-		+cssbutton_rosy;
+		@include cssbutton_rosy;
 	}
 	&.green {
-		+cssbutton_green;
+		@include cssbutton_green;
 	}
 	&.pink {
-		+cssbutton_pink;
+		@include cssbutton_pink;
 	}
 }
