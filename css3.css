@@ -11,6 +11,19 @@ CSS3 Transition Mixin
 	transition: $trans;
 }
 
+/*
+CSS3 Transition Transform Mixin
+@author Benjamin "balupton" Lupton {@link http://www.balupton.com}
+@version 1.0, December 17 2010
+*/
+
+@mixin transition-transform($trans) {
+	-webkit-transition: -webkit-transform $trans;
+	-moz-transition: -moz-transform $trans;
+	-o-transition: -o-transform $trans;
+	transition: transform $trans;
+}
+
 /**
  * Specify the size of the background image in pixels or percentage.
  * Firefox 3.6+ can also have values of cover or contain
