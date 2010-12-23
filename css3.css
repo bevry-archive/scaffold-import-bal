@@ -12,6 +12,19 @@ CSS3 Transition Mixin
 }
 
 /*
+CSS3 Transform Mixin
+@author Benjamin "balupton" Lupton {@link http://www.balupton.com}
+@version 1.0, December 17 2010
+*/
+
+@mixin transform($trans) {
+	-webkit-transform: $trans;
+	-moz-transform: $trans;
+	-o-transform: $trans;
+	transform: $trans;
+}
+
+/*
 CSS3 Transition Transform Mixin
 @author Benjamin "balupton" Lupton {@link http://www.balupton.com}
 @version 1.0, December 17 2010
